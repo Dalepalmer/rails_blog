@@ -7,7 +7,6 @@ describe "the add a post process" do
     fill_in 'Entry', :with => 'Test Pull'
     fill_in 'Date', :with => '05/31/1987'
     click_on 'Create Post'
-    save_and_open_page
     expect(page).to have_content 'Post has been'
   end
 

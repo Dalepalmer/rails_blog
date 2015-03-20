@@ -3,7 +3,6 @@
 
 <div class="container">
   <h1> Craft a Post! </h1>
-  <%= render 'layouts/errors', object: @post %>
   <%= form_for Post.create do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title, :required => true %>

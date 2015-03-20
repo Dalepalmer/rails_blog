@@ -1,30 +1,30 @@
 class CommentsController < ApplicationController
 
   def new
-    @comment = comment.new
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new
   end
 
   def destroy
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
     if @comment.destroy
       flash[:alert] = "Comment successfully deleted"
     end
-    redirect_to comments_path
-  end
-
-  def show
-    @comment = Comment.find(params[:id])
+    redirect_to post_path(@post)
   end
 
   def edit
+    @post = Post.find(params[:post_id])
     @comment = Comment.find(params[:id])
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new(comment_params)
     if @comment.save
       flash[:notice] = "Your Comment has been saved successfully"
-      redirect_to comments_path
+      redirect_to post_path(@post)
     else
       flash[:alert] = "There was a problem creating this comment"
     end
