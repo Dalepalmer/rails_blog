@@ -19,6 +19,17 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      flash[:notice] = "Task successfully updated!"
+      redirect_to post_path(@comment.post)
+    else
+      render :edit
+    end
+  end
+
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)

@@ -1,0 +1,19 @@
+<% content_for(:title, "Edit | comment") %>
+<%= render 'layouts/errors', object: @comment %>
+
+<h1>Edit the Comment</h1>
+
+<div class="container">
+  <%= form_for [@post, @comment] do |f| %>
+  <div>
+    <%= f.label :username %>
+    <%= f.text_field :username, :required => true %>
+  </div>
+
+  <div>
+    <%= f.label :descriptiom %>
+    <%= f.text_area :description, :required => true %>
+  </div>
+  <%= f.submit "Edit comment" %>
+  <% end %>
+</div>

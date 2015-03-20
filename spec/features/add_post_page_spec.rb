@@ -5,8 +5,9 @@ describe "the add a post process" do
     visit new_post_path
     fill_in 'Title', :with => 'Test Shot'
     fill_in 'Entry', :with => 'Test Pull'
+    save_and_open_page
     fill_in 'Date', :with => '05/31/1987'
-    click_on 'Create Post'
+    click_on 'Post'
     expect(page).to have_content 'Post has been'
   end
 

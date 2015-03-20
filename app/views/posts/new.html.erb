@@ -3,13 +3,13 @@
 
 <div class="container">
   <h1> Craft a Post! </h1>
-  <%= form_for Post.create do |form| %>
+  <%= form_for @post do |form| %>
   <%= form.label :title %>
-  <%= form.text_field :title, :required => true %>
+  <%= form.text_field :title%>
   <%= form.label :entry %>
-  <%= form.text_area :entry, :required => true %>
+  <%= form.text_area :entry%>
   <%= form.label :date %>
-  <%= form.date_field :date, :required => true %>
-  <%= form.submit "Create Post" %>
+  <%= form.date_field :date%>
+  <%= form.submit "Post" %>
   <% end %>
 </div>

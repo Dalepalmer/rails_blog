@@ -2,8 +2,11 @@ require 'rails_helper'
 
 describe "the add a comment process" do
   it "adds a new comment" do
-    post = Post.create(:title => 'Test Shot', :entry => 'Test Pull', :date => '05/31/1987')
-    visit new_post_comment_path(post)
+    visit new_post_path
+    fill_in 'Title', :with => 'Test Shot'
+    fill_in 'Entry', :with => 'Test Pull'
+    fill_in 'Date', :with => 05/31/1987
+    click_on 'Post'
     comment = Comment.create(:username => 'Dale', :description => 'Test comment')
     expect(page).to have_content 'Comment has been'
   end
