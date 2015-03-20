@@ -3,5 +3,4 @@ class Comment < ActiveRecord::Base
 
   validates :username, :presence => true
   validates :description, :presence => true
-
 end
