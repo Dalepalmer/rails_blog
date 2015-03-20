@@ -1,18 +1,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.jumbotron {
-  background: rgba(255, 255, 255, .77);
-  text-align: center;
-}
+
+
 
 body {
   background-image: url("http://hdwallpaper.freehdw.com/0001/3d-abstract_widewallpaper_coffee-beans_792.jpg");
     color: #874b24;
 
+  .jumbotron {
+    background: rgba(255, 255, 255, .77);
+  }
   h1 {
     font-family: 'Times', serif;
   }
-
 
 }

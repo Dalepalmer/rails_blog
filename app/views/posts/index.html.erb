@@ -1,23 +1,21 @@
 <div class="container">
   <h1>Coffee Achievements</h1>
 </div>
+<div class="container">
 <div class="row">
 <% @posts.each do |post| %>
 <div class="col-md-2">
   <div>
-    <%= post.title %>
+    <%= link_to post.title, post_path(post) %>
   </div>
-  <div>
-    <%= post.entry %>
-  </div>
-  <div>
-    <%= post.date %>
-  </div>
-  <div>
-    <%= link_to "Delete", post_path(post),
-    :data => {:confirm => "Do you really want to delete this post?",
-      :method => "delete"} %>
-  </div>
-</div>
 <% end %>
+</div>
+</div>
+<div class="container">
+  <div>
+    <%= link_to "Add another post", new_post_path %>
+  </div>
+  <div>
+    <%= link_to "Home", root_path %>
+  </div>
 </div>

@@ -1,0 +1,22 @@
+<div>
+<h1><%= @post.title %></h1>
+</div>
+<div>
+  <h2><%= @post.entry %></h2>
+</div>
+<div>
+  <h5><%= @post.date %></h5>
+</div>
+<div>
+  <%= link_to "Edit", edit_post_path(@post) %> |
+  <%= link_to "Delete", post_path,
+  :data => {:confirm => "Do you really want to delete this post?",
+    :method => "delete"} %>
+  </div>
+
+
+<div>
+<h3>Comments</h3>
+  <%= @post.comments.each do |comment| %>
+    
+</div>

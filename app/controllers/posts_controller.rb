@@ -13,18 +13,22 @@ class PostsController < ApplicationController
     if @post.destroy
       flash[:alert] = "Post successfully deleted"
     end
-    redirect_to :back
+    redirect_to posts_path
   end
 
   def show
-    @show = Post.find(params[:id])
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = "Your post has been saved successfully"
-      redirect_to "/"
+      redirect_to posts_path
     else
       flash[:alert] = "There was a problem creating this post"
     end

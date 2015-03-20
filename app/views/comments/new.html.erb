@@ -1,16 +1,16 @@
-<%= render 'layouts/errors', object: @post %>
+<%= render 'layouts/errors', object: @comment %>
 
 
 <div class="container">
-  <h1> Craft a Post! </h1>
-  <%= render 'layouts/errors', object: @post %>
-  <%= form_for Post.create do |form| %>
+  <h1> Craft a Comment! </h1>
+  <%= render 'layouts/errors', object: @comment %>
+  <%= form_for Comment.create do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title, :required => true %>
   <%= form.label :entry %>
   <%= form.text_area :entry, :required => true %>
   <%= form.label :date %>
   <%= form.date_field :date, :required => true %>
-  <%= form.submit "Create Post" %>
+  <%= form.submit "Create Comment" %>
   <% end %>
 </div>
