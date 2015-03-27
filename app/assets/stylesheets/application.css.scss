@@ -1,4 +1,5 @@
 @import "bootstrap-sprockets";
+@import "bootswatch/simplex/variables";
 @import "bootstrap";
 
 
@@ -8,11 +9,24 @@ body {
   background-image: url("http://hdwallpaper.freehdw.com/0001/3d-abstract_widewallpaper_coffee-beans_792.jpg");
     color: #874b24;
 
+  #photo {
+    background-image: url("http://img1.beachbodyimages.com/beachbody/image/upload/v1409762611/beachbodyblog/Beachbody-Blog-Pumpkin-Spice-Latte.jpg");
+    background-size: cover;
+    background-attachment: local;
+  }
   .jumbotron {
-    background: rgba(255, 255, 255, .77);
+    background: rgba(255, 255, 255, .40);
+    width: 100%;
+    margin: 0;
+  }
+  #foreground {
   }
   h1 {
     font-family: 'Times', serif;
+  }
+
+  ul {
+    list-style-type: none;
   }
 
 }

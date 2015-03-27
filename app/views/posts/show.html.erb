@@ -8,8 +8,8 @@
   <h5><%= @post.date %></h5>
 </div>
 <div>
-  <%= link_to "Edit", edit_post_path(@post) %> |
-  <%= link_to "Delete", post_path,
+  <%= link_to "Edit Post", edit_post_path(@post) %> |
+  <%= link_to "Delete Post", post_path,
   :data => {:confirm => "Do you really want to delete this post?",
     :method => "delete"} %>
   </div>
@@ -20,13 +20,16 @@
   <%= link_to "Add a Comment", new_post_comment_path(@post) %>
     <div>
     <% @post.comments.each do |comment| %>
-      <%= comment.username %>
-      <%= comment.description %>
-      <%= link_to "Edit", edit_post_comment_path(@post, comment) %> |
-      <%= link_to "Delete", post_comment_path(@post, comment),
+    <ul>
+      <li><%= comment.username %></li>
+      <li><%= comment.description %></li>
+      <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %> |
+      <%= link_to "Delete Comment", post_comment_path(@post, comment),
       :data => {:confirm => "You sure?",
         :method => "delete"} %> |
+    </ul>
     <% end %>
       <p> Be the first one to comment!</p>
     <div>
+    <%= link_to "Home", root_path %>
 </div>

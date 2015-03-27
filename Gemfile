@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootswatch-rails'
 
 group :development do
   gem 'byebug'
@@ -27,4 +28,8 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
