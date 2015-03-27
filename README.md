@@ -1,6 +1,8 @@
 # rails_blog
 ## Epicodus week 11 assessment
 
+To use the blog visit http://coffee-achievers.herokuapp.com/
+
 ### Application installation:
 
 1. From the terminal clone the repository from github by entering the command git clone www.github.com/Dalepalmer/rails_blog.git
