@@ -3,15 +3,14 @@
 
 <div class="container">
   <h1> Craft a Comment! </h1>
-  <%= form_for [@post, @comment] do |form| %>
+  <%= form_for [@post, @comment] do |f| %>
   <div>
-  <%= form.label :username %>
-  <%= form.text_field :username, :required => true %>
+  <%= f.hidden_field :username, value: current_user.email  %>
   </div>
   <div>
-  <%= form.label :comment  %>
-  <%= form.text_area :description, :required => true %>
+  <%= f.label :description  %>
+  <%= f.text_area :description, :required => true %>
   </div>
-  <%= form.submit "Add Comment" %>
+  <%= f.submit "Post Comment" %>
   <% end %>
 </div>

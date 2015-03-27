@@ -1,4 +1,12 @@
+<div class="navbar navbar-default">
+  <div class="navbar-header">
+        <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <%= button_to "Craft Post", posts_path, :class => 'navbar-post' %>
+    <%= button_to "Sign in", new_user_session_path,  :class => 'navbar-signin' %>
+</div>
 <h1>Coffee Achiever's</h1>
 
 <h2>Click <%= link_to "here", new_post_path%> to add a post</h2>
 <h3>Click <%= link_to "here", posts_path%> to view all posts</h2>
+<h3><%= link_to "Log out", destroy_user_session_path, :method => "DELETE" %></h2>

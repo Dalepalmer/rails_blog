@@ -7,6 +7,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.4'
 
 group :development do
@@ -21,6 +22,7 @@ group :test, :development do
   gem 'pry'
   gem 'capybara'
   gem 'launchy'
+  gem 'factory_girl_rails'
 end
 
 group :test do

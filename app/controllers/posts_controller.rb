@@ -36,9 +36,10 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
     if @post.save
       flash[:notice] = "Your post has been saved successfully"
-      redirect_to posts_path
+      redirect_to post_path(@post)
     else
       flash[:alert] = "There was a problem creating this post"
     end
@@ -47,6 +48,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :entry, :date)
+    params.require(:post).permit(:title, :entry, :date, :user_id)
   end
 end
