@@ -12,9 +12,7 @@ describe "the add a comment process" do
     fill_in 'Title', :with => 'Test Shot'
     fill_in 'Entry', :with => 'Test Pull'
     click_on 'Post'
-    click_on 'Edit'
-    fill_in 'Title', :with => 'new test'
-    click_on 'Edit Post'
-    expect(page).to have_content 'updated'
+    click_on 'Delete Post'
+    expect(page).to have_content 'Deleted'
   end
 end
