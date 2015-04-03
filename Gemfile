@@ -27,6 +27,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'poltergeist'
   gem 'dotenv-rails'
+  gem 'database_cleaner'
 end
 
 group :test do

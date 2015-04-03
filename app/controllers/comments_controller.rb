@@ -3,8 +3,13 @@ class CommentsController < ApplicationController
   def new
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new
-
   end
+
+  def show
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
+  end
+
 
   def destroy
     @post = Post.find(params[:post_id])
@@ -32,12 +37,22 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
+    @post.user = current_user
     @comment = @post.comments.new(comment_params)
     if @comment.save
-      flash[:notice] = "Your Comment has been saved successfully"
-      redirect_to post_path(@post)
+        flash[:notice] = "Your Comment has been saved successfully"
+      respond_to do |format|
+        format.html do
+          redirect_to post_path(@post)
+        end
+        format.js
+      end
     else
-      flash[:alert] = "There was a problem creating this comment"
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        flash[:alert] = "There was a problem creating this comment"
+        format.js
+      end
     end
   end
 

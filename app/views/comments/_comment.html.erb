@@ -1,0 +1,9 @@
+<ul>
+  <li class="comment" id="comment_<%= comment.id %>">
+    <%= comment.description %>,<br>
+    <%= comment.username %>
+    <%= link_to "Edit Comment", edit_post_comment_path(@post, comment) %> |
+    <%= link_to "Delete Comment", post_comment_path(@post, comment),
+    :data => {:confirm => "You sure?",
+      :method => "delete"} %> |
+</ul>
