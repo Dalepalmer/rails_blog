@@ -7,7 +7,7 @@ describe "the add a comment process" do
     sign_in(user)
   end
 
-  it "adds a new comment" do
+  it "adds a new comment", js: true do
     visit new_post_path
     fill_in 'Title', :with => 'Test Shot'
     fill_in 'Entry', :with => 'Test Pull'

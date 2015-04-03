@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootswatch-rails'
+gem 'rest-client'
 
 group :development do
   gem 'byebug'
@@ -24,10 +25,14 @@ group :test, :development do
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails'
+  gem 'poltergeist'
+  gem 'dotenv-rails'
 end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :production do
