@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def new
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new
+    @comment = Comment.new
   end
 
   def show
@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def index
+    @comments = Comment.all
+  end
 
   def destroy
     @post = Post.find(params[:post_id])
@@ -37,14 +40,11 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @post.user = current_user
     @comment = @post.comments.new(comment_params)
     if @comment.save
-        flash[:notice] = "Your Comment has been saved successfully"
+      flash[:notice] = "Your Comment has been saved successfully"
       respond_to do |format|
-        format.html do
-          redirect_to post_path(@post)
-        end
+        format.html { redirect_to post_path(@post) }
         format.js
       end
     else
